@@ -1,0 +1,27 @@
+{
+  "name": "ava-browser-fixture",
+  "version": "1.0.0",
+  "description": "a fixture for browser testing in ava",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeltN24/ava-browser-fixture.git"
+  },
+  "keywords": [
+    "ava",
+    "browser",
+    "fixture"
+  ],
+  "author": "WeltN24 Dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WeltN24/ava-browser-fixture/issues"
+  },
+  "homepage": "https://github.com/WeltN24/ava-browser-fixture#readme",
+  "devDependencies": {
+    "browser-env": "^2.0.16"
+  }
+}
