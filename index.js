@@ -13,7 +13,7 @@ exports.window.Date = Date;
 /**
  * returns a fixture with the given filename loaded into document
  *
- * @param {string} filename
+ * @param {string} filename relative to project root (since ava@0.17.0)
  * @param {Function} test
  * @returns {Promise.<TResult>}
  * @constructor
@@ -23,7 +23,7 @@ exports.Fixture = function Fixture(filename, test) {
     // read content from fixtures
     fs.readFile(filename, (err, data) => {
       if (err) {
-        return reject(reject);
+        return reject(err);
       }
       return resolve(data);
     });

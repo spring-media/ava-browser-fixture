@@ -31,13 +31,4 @@ Example:
 
 ## usage
 
-```js
-
-import test from 'ava';
-import {Fixture} from "ava-browser-fixture";
-
-test('test my module', t => Fixture("./fixtures/loadModule.html", (document) => {
-  // .. 
-}));
-```
-
+See [test.js](https://github.com/WeltN24/ava-browser-fixture/blob/master/test/test.js) for usage example.
