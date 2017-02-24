@@ -5,10 +5,10 @@ const
   fs = require('fs');
 
 // browserEnv needed for DOM related functions
-exports.window = browserEnv();
+window = browserEnv();
 
 // set window.Date
-exports.window.Date = Date;
+window.Date = Date;
 
 /**
  * returns a fixture with the given filename loaded into document
@@ -18,21 +18,24 @@ exports.window.Date = Date;
  * @returns {Promise.<TResult>}
  * @constructor
  */
-exports.Fixture = function Fixture(filename, test) {
-  return new Promise((resolve, reject) => {
-    // read content from fixtures
-    fs.readFile(filename, (err, data) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(data);
+exports.fixture = function fixture(filename) {
+  return function(t) {
+    return new Promise((resolve, reject) => {
+      // read content from fixtures
+      fs.readFile(filename, (err, data) => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve(data);
+      });
+    }).then(data => {
+      // write content of fixture to document
+      document.write(data);
+      return document;
+    }).then(document => {
+      // write document and window to context
+      t.context.document = document;
+      t.context.window = window;
     });
-  }).then(data => {
-    // write content of fixture to document
-    document.write(data);
-    return document;
-  }).then(document => {
-    // pass document to current test case
-    return test(document);
-  });
+  }
 };
