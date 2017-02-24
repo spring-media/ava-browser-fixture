@@ -2,17 +2,27 @@
 
 A module which adds a Browser Environment to your Ava Test.
 
-When your Javascript need a Browser-Envirnment or some HTML to run, you can setup
-these HTML-File as a Fixture, and your Javascript can access them by the usual
-Browser-API (i.e.: `document.querySelector()`).
+When your Code modifies the DOM or needs some HTML to run, you can setup these
+HTML-File as a Fixture can access them by the usual Browser-API (i.e.:
+`document.querySelector()`) with this module.
 
-## install
+## Install
 
+Install this module with `npm` or `yarn`.
+
+**NPM:**
+
+```bash
+npm install --save-dev ava-browser-fixture
 ```
-npm install ava-browser-fixture
+
+**Yarn:**
+
+```bash
+yarn add --dev ava-browser-fixture
 ```
 
-## setup
+## Setup
 
 Add `ava-browser-fixture` to the `require` block for ava in your `package.json`:
 
@@ -34,6 +44,8 @@ Example:
 ```
 
 ## usage
+
+Setup your fixture in the beforeEach block:
 
 ```javascript
 import test from "ava";
