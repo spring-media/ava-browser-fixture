@@ -1,6 +1,6 @@
 
 import test from "ava";
-import {fixture, window} from "../index";
+import {fixture} from "../index";
 
 test.beforeEach('setup fixture', fixture("./test/test.html"));
 
